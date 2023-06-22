@@ -31,16 +31,20 @@ void Turn (int Direction float Degrees){
   //-1 for direction is CCW
   Motor1.move_relative((Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
   Motor2.move_relative((Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
-  Motor3.move_relative((Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
-  Motor4.move_relative((Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
+  Motor3.move_relative((-Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
+  Motor4.move_relative((-Direction*((Degrees*((DRCP*M_PI)/360))/(M_PI*WheelDia))*MotorType), 200);
 }
-//((DRCP*M_PI)/360)
-//
 
-//arc code
-/*
-void Arc (int)
-*/
-//move arm
+
+//code for turning is an arc
+
+void Arc (int){
+
+}
+
+void MoveArm (int Degrees){
+    Motor1.move_relative(Degrees*(MotorType/360), 200)
+    Motor2.move_relative(Degrees*(MotorType/360), 200)
+}
 //activate cylinder
 //
